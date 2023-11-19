@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: none;
+  border: none;
+  /* outline: none; */
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  /* outline:2px solid black; */
+}
+
+.main {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button,
+svg {
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #dedddd;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #fdbe1f;
+  border-radius: 6px;
+}

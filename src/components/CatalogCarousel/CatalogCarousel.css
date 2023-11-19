@@ -1,0 +1,45 @@
+.CatalogCarousel {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 0 7%;
+  margin-bottom: 40px;
+}
+.katalogImg {
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+}
+.pathtocategory {
+  background: none;
+  width: 120px;
+  height: 1-0px;
+}
+.katalogImg img {
+  width: 100%;
+  height: 90%;
+  background-color: #fff;
+  color: #000;
+}
+
+.categoriya {
+  display: none;
+}
+
+@media (max-width: 777px) {
+  .hide {
+    display: none;
+  }
+
+  .categoriya {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+}
