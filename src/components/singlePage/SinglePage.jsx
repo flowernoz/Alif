@@ -20,6 +20,7 @@ function SinglePage() {
   const heartData = useSelector((s) => s.addToHeart).map((i) => i.id);
   const cartData = useSelector((s) => s.addToCart).map((i) => i.id);
   const cartnumber = useSelector((s) => s.addToCart).map((i) => i.quantity);
+
   let singleData = data?.find((i) => i.id.toString() === id);
 
   let prices = singleData?.price;
@@ -116,7 +117,7 @@ function SinglePage() {
               <s>{price * 1.5}</s>
             </div>
             <div className="homeproducts_boxs_right_header_text_products_buttons">
-              {cartData.some((i) => i === singleData.id) ? (
+              {cartData?.some((i) => i === singleData.id) ? (
                 <button id="savatda">Savatda</button>
               ) : (
                 <button onClick={() => adcart(singleData)}>

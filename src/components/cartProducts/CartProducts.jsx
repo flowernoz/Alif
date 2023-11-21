@@ -4,13 +4,22 @@ import { FaTrash } from "react-icons/fa";
 import "./CartProducts.css";
 import { ADD_TO_CART, removeFromCart, deleteCart } from "../../redux/addToCart";
 import { useDispatch, useSelector } from "react-redux";
-import { Add_To_Heart } from "../../redux/addToHeart";
 
 function CartProducts({ data }) {
+  const dispatch = useDispatch();
   const heartData = useSelector((s) => s.addToHeart).map((i) => i.id);
   const cartData = useSelector((s) => s.addToCart).map((i) => i.id);
-  const dispatch = useDispatch();
-
+  const cartnumber = useSelector((s) => s.addToCart).map((i) => i.quantity);
+  let cartprice = cartnumber;
+  const subtotal = useSelector((state) =>
+    state.addToCart.reduce(
+      (subtotal, product) => subtotal + product.price * product.quantity,
+      0
+    )
+  );
+  const total = useSelector((state) =>
+    state.addToCart.reduce((total, product) => total + product.quantity, 0)
+  );
   return (
     <div className="home_cart_products">
       <div className="cart_products">
@@ -38,7 +47,11 @@ function CartProducts({ data }) {
               <div className="cart_products_cart_products_items_count">
                 <div className="cart_products_cart_products_items_count_1">
                   <button
-                    onClick={() => dispatch(removeFromCart({ pro: item }))}
+                    onClick={() => {
+                      item.quantity > 0
+                        ? dispatch(removeFromCart({ pro: item }))
+                        : dispatch(deleteCart({ pro: item }));
+                    }}
                   >
                     <AiOutlineMinus className="Minus" />
                   </button>
@@ -63,10 +76,10 @@ function CartProducts({ data }) {
         <div className="place_an_order">
           <div className="order_text">
             <b>
-              Jami <span>1100000 so'm</span>
+              Jami <span>{subtotal} so'm</span>
             </b>
             <h4>
-              Tovarlar soni <b>1 dona</b>
+              Tovarlar soni <b>{total} dona</b>
             </h4>
             <h4>
               Yetkazib berish <s>Bepul</s>

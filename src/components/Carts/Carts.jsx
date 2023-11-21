@@ -83,7 +83,7 @@ function Carts({ data, componentName, moreLink }) {
                 <s>{item.price + Math.ceil(item.price % 10)} so'm </s>
                 <span className="pure_price">{item.price} so'm</span>
               </div>
-              {cartData.some((i) => i === item.id) ? (
+              {cartData?.some((i) => i === item.id) ? (
                 <div>
                   <div className="shop shops">
                     {/* <button>

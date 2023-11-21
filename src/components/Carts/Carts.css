@@ -171,6 +171,10 @@
 }
 
 @media screen and (max-width: 843px) {
+  .cardtitle h1 {
+    text-align: center;
+  }
+  .cartsLogo,
   .cards {
     justify-content: center;
   }

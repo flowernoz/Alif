@@ -17,7 +17,9 @@ import { FaRegUser } from "react-icons/fa6";
 
 function Navbar() {
   const heartnumber = useSelector((s) => s.addToHeart).length;
-  const cartnumber = useSelector((s) => s.addToCart).length;
+  const cardnumber = useSelector((state) =>
+    state.addToCart.reduce((total, product) => total + product.quantity, 0)
+  );
   const [openSidebar, setOpenSidebar] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
   let phone = localStorage.getItem("phone");
@@ -124,8 +126,8 @@ function Navbar() {
           <Link className="header__link" to={"/cart"}>
             <AiOutlineShoppingCart />
             <span>Savat</span>
-            {cartnumber > 0 ? (
-              <div className="likedNumber">{cartnumber}</div>
+            {cardnumber > 0 ? (
+              <div className="likedNumber">{cardnumber}</div>
             ) : (
               ""
             )}
@@ -162,12 +164,12 @@ function Navbar() {
         <NavLink to={"/cart"}>
           <AiOutlineShoppingCart />
           Savat
-          <div className="likedNumber"></div>
+          <div className="likedNumber">{cardnumber}</div>
         </NavLink>
         <NavLink to={"/heart"}>
           <AiOutlineHeart />
           Saralanganlar
-          <div className="likedNumber"></div>
+          <div className="likedNumber">{heartnumber}</div>
         </NavLink>
         <button onClick={() => setOpenRegister(true)}>
           <FaRegUser />

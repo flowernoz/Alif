@@ -8,6 +8,7 @@
 }
 .footer {
   background-color: #fff;
+  margin-top: 80px;
 }
 
 /* .footer {
@@ -50,7 +51,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 17px;
   margin: 0 auto 50px;

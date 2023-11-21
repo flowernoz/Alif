@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
   text-decoration: none;
   background: none;
+  outline: none;
   border: none;
   /* outline: none; */
   scroll-behavior: smooth;

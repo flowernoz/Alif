@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: localStorage.getItem("cart") || [],
+  products: [],
   productsNumber: 0,
 };
 
@@ -58,6 +58,13 @@ export const cartSlice = createSlice({
       }
       state.productsNumber = state.productsNumber - 1;
     },
+    // deleteCart: (state, action) => {
+    //   const index = state.findIndex(
+    //     (product) => product.id === action.payload.pro.id
+    //   );
+    //   // remove from the array
+    //   state.splice(index, 1);
+    // },
   },
 });
 
