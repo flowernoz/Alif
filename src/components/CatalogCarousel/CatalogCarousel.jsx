@@ -24,19 +24,27 @@ export default function CatalogCarousel() {
     <div id="categories_main" className="CatalogCarousel">
       <div className="hide">
         <Swiper
+          style={{
+            "--swiper-navigation-color": "#333",
+            "--swiper-navigation-background-color": "#000",
+          }}
           slidesPerView={1}
           spaceBetween={10}
           breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 5,
+              spaceBetween: 40,
+            },
+            890: {
+              slidesPerView: 6,
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 5,
+              slidesPerView: 7,
+              spaceBetween: 50,
+            },
+            1124: {
+              slidesPerView: 8,
               spaceBetween: 50,
             },
           }}
@@ -46,7 +54,10 @@ export default function CatalogCarousel() {
         >
           {katalogCarousel.map((item, index) => (
             <SwiperSlide key={index}>
-              <button onClick={() => navigatetoCategory(item.title)}>
+              <button
+                className="catalog_btn"
+                onClick={() => navigatetoCategory(item.title)}
+              >
                 <div className="katalogImg">
                   <img src={item.image} alt="images" />
                 </div>

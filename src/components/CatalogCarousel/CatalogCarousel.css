@@ -6,6 +6,9 @@
   padding: 0 7%;
   margin-bottom: 40px;
 }
+.catalog_btn {
+  width: 120px;
+}
 .katalogImg {
   width: 120px;
   height: 80px;
@@ -17,7 +20,6 @@
 .pathtocategory {
   background: none;
   width: 120px;
-  height: 1-0px;
 }
 .katalogImg img {
   width: 100%;

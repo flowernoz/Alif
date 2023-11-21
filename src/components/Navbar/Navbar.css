@@ -332,6 +332,13 @@ button.header_katalog {
   gap: 5px;
   color: #61686d;
   font-size: 14px;
+  position: relative;
+}
+.header__sub a .likedNumber {
+  top: 0;
+
+  width: 15px;
+  height: 15px;
 }
 .header__sub button svg,
 .header__sub a svg {

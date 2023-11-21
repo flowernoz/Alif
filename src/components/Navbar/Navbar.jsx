@@ -110,7 +110,11 @@ function Navbar() {
             style={{ display: searchResult?.length ? "flex" : "none" }}
           >
             {searchResult?.map((item, index) => (
-              <Link to={`/single-page/${item.id}`} key={index}>
+              <Link
+                onClick={() => setSearchResult(null)}
+                to={`/single-page/${item.id}`}
+                key={index}
+              >
                 {item.title}
               </Link>
             ))}
@@ -150,16 +154,20 @@ function Navbar() {
           Home
         </NavLink>
         <a href="#categories_main">
-          <MdOutlineManageSearch />
-          Katalog
+          <Link to={"/"}>
+            <MdOutlineManageSearch />
+            Katalog
+          </Link>
         </a>
         <NavLink to={"/cart"}>
           <AiOutlineShoppingCart />
           Savat
+          <div className="likedNumber"></div>
         </NavLink>
         <NavLink to={"/heart"}>
           <AiOutlineHeart />
           Saralanganlar
+          <div className="likedNumber"></div>
         </NavLink>
         <button onClick={() => setOpenRegister(true)}>
           <FaRegUser />

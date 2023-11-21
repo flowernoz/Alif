@@ -187,4 +187,10 @@
   .cardtitle h1 {
     flex-direction: column;
   }
+  .cardItem {
+    flex-grow: 1;
+  }
+  .cards {
+    padding: 0 5%;
+  }
 }

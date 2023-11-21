@@ -51,7 +51,9 @@ function Footer() {
                     {hide ? item.p.split("").slice(0, 194).join("") : item.p}
                   </p>
                 </div>
-                <button>{hide ? showP : hideP}</button>
+                <button onClick={() => setHide(!hide)}>
+                  {hide ? showP : hideP}
+                </button>
               </div>
             ))}
           </div>

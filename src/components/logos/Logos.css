@@ -2,9 +2,3 @@
   width: 100%;
   padding: 0 4%;
 }
-@media (max-width: 500px) {
-  button#katalogga {
-    width: 130px !important;
-    padding: 0;
-  }
-}

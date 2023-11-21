@@ -50,7 +50,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 17px;
   margin: 0 auto 50px;
@@ -167,10 +167,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   gap: 30px;
-  padding: 50px 0;
+  padding: 50px 0 25px 0;
 }
 .bottom__center .info {
   width: 255px;
@@ -202,7 +202,6 @@
   cursor: pointer;
 }
 footer {
-  margin-top: 80px;
   background-color: #24272c;
   width: 100%;
   height: auto;
