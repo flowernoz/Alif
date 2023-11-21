@@ -43,18 +43,10 @@
   font-weight: 100;
 }
 
-/* .cart_products .cart_product_item div span {
-    padding: 5px 5px;
-    border: 1px solid blueviolet;
-    color: blueviolet;
-    font-size: 15px;
-    border-radius: 3px;
-} */
-
 .cart_products .cart_product_items {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid #444;
   margin-bottom: 10px;
 }

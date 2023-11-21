@@ -28,7 +28,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 30px;
 }
 
@@ -170,26 +170,21 @@
   font-size: 22px;
 }
 
-/* @media screen and (max-width: 1288px) {
+@media screen and (max-width: 843px) {
   .cards {
-    grid-template-columns: repeat(4, 220px);
     justify-content: center;
   }
 }
-@media screen and (max-width: 960px) {
-  .cards {
-    grid-template-columns: repeat(3, 220px);
-  }
-}
-
-*/
 @media screen and (max-width: 635px) {
   .cardtitle h1 {
     flex-direction: column;
   }
+}
+@media screen and (max-width: 400px) {
   .cardItem {
     flex-grow: 1;
   }
+
   .cards {
     padding: 0 5%;
   }
