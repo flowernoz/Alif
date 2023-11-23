@@ -1,34 +1,27 @@
 import React, { useState } from "react";
-// import { NavLink } from "react-router-dom";
 import "./SinglePage.css";
 import { AiFillStar, AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { SlBasket } from "react-icons/sl";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import data from "../../static/alldata";
-import { BsHeartFill } from "react-icons/bs";
-import { PiHeartThin } from "react-icons/pi";
 import { useSelector, useDispatch } from "react-redux";
 import { ADD_TO_CART, removeFromCart } from "../../redux/addToCart.js";
 import { Add_To_Heart } from "../../redux/addToHeart";
 import { toast } from "react-toastify";
-import { FaMinus, FaPlus } from "react-icons/fa6";
 
 function SinglePage() {
   let { id } = useParams();
   const [imgIndex, setImgIndex] = useState(0);
+  let singleData = data?.find((i) => i.id.toString() === id);
   const heartData = useSelector((s) => s.addToHeart).map((i) => i.id);
   const cartData = useSelector((s) => s.addToCart).map((i) => i.id);
-  const cartnumber = useSelector((s) => s.addToCart).map((i) => i.quantity);
-
-  let singleData = data?.find((i) => i.id.toString() === id);
-
+  let cartId = useSelector((s) => s.addToCart).find(
+    (i) => i.id.toString() === id
+  );
+  let quantity = cartId?.quantity ? cartId?.quantity : 0;
   let prices = singleData?.price;
-  console.log(cartnumber);
   const dispatch = useDispatch();
-
   function addToCart(item) {
-    console.log("ok");
     dispatch(ADD_TO_CART({ pro: item }));
   }
 
@@ -45,8 +38,8 @@ function SinglePage() {
     });
   }
 
-  let price = prices * cartnumber;
-
+  let price = prices * quantity || prices;
+  console.log(cartId);
   return (
     <div className="single_pages_parts">
       <div className="homeproducts">
@@ -83,11 +76,10 @@ function SinglePage() {
                 </p>
                 <p>600 ta buyurtma</p>
               </div>
-              <h4>{/* <AiOutlineHeart /> */}</h4>
             </div>
             <h2>{singleData?.description}</h2>
             <h3>
-              <span>{price} / birlik </span> <s>{price * 1.5}</s>
+              <span>{price} / birlik </span>
             </h3>
             <p className="homeproducts_boxs_right_4 column_media">
               <span>Sotuvchi: </span>
@@ -96,25 +88,28 @@ function SinglePage() {
               </span>
             </p>
             <p className="column_media">
-              <span>Narx: </span> <span>{singleData?.price * cartnumber}</span>
+              <span>Narx: </span> <span>{singleData.price} sum</span>
             </p>
             <hr style={{ margin: "20px 0" }} />
 
             <p>Miqdori:</p>
             <div className="homeproducts_boxs_right_header_text_products_miqdori">
               <div className="homeproducts_boxs_right_header_text_products_miqdori_1">
-                <button onClick={() => removeCart(singleData)}>
+                <button
+                  disabled={quantity < 1}
+                  onClick={() => removeCart(singleData)}
+                >
                   <AiOutlineMinus className="AiOutlineMinus" />
                 </button>
-                <h3>{cartnumber ? cartnumber : 0}</h3>
+                <h3>{quantity > 0 ? quantity : 0}</h3>
                 <button onClick={() => addToCart(singleData)}>
                   <AiOutlinePlus className="AiOutlineMinus" />
                 </button>
               </div>
             </div>
             <div className="homeproducts_boxs_right_header_text_products_prices">
-              <h2>{price}</h2>
-              <s>{price * 1.5}</s>
+              <h2>{price} sum</h2>
+              <s>{price * 1.5} sum</s>
             </div>
             <div className="homeproducts_boxs_right_header_text_products_buttons">
               {cartData?.some((i) => i === singleData.id) ? (

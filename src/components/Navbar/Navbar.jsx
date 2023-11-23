@@ -156,10 +156,8 @@ function Navbar() {
           Home
         </NavLink>
         <a href="#categories_main">
-          <Link to={"/"}>
-            <MdOutlineManageSearch />
-            Katalog
-          </Link>
+          <MdOutlineManageSearch />
+          Katalog
         </a>
         <NavLink to={"/cart"}>
           <AiOutlineShoppingCart />

@@ -33,7 +33,7 @@ function Register({ setOpenRegister }) {
         });
       })
       .catch((err) => console.log(err));
-    localStorage.setItem("phone", phone).finally(() => setOpenRegister(false));
+    // localStorage.setItem("phone", phone).finally(() => setOpenRegister(false));
   }
   return (
     <div className="Register">

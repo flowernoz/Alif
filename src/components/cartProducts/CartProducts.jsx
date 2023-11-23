@@ -42,13 +42,14 @@ function CartProducts({ data }) {
                 Sotuvchi: <span>{item.brand}</span>
               </p>
               <p>
-                Narx: <span>{item.price * item.quantity}</span>
+                Narx: <span>{item.price * item.quantity} sum</span>
               </p>
               <div className="cart_products_cart_products_items_count">
                 <div className="cart_products_cart_products_items_count_1">
                   <button
+                    disabled={item.quantity < 2}
                     onClick={() => {
-                      item.quantity > 0
+                      item.quantity > 1
                         ? dispatch(removeFromCart({ pro: item }))
                         : dispatch(deleteCart({ pro: item }));
                     }}

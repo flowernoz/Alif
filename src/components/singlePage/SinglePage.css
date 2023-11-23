@@ -98,7 +98,6 @@
   background-color: #fff;
   padding: 10px 7%;
 }
-
 .homeproducts_boxs_right_header {
   width: 100%;
   height: 40px;
@@ -107,7 +106,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .homeproducts_boxs_right_header_text {
   display: flex;
   gap: 10px;

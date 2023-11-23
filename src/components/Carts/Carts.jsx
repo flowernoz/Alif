@@ -19,18 +19,11 @@ function Carts({ data, componentName, moreLink }) {
   const cartData = useSelector((s) => s.addToCart).map((i) => i.id);
   const cartnumber = useSelector((s) => s.addToCart).map((i) => i.quantity);
 
-  function addToCart(item) {
-    console.log("ok");
-    dispatch(ADD_TO_CART({ pro: item }));
-  }
-  function removeCart(item) {
-    dispatch(removeFromCart({ pro: item }));
-    toast.success("Tovar o'chirildi!", {
-      position: toast.POSITION.TOP_CENTER,
-      autoClose: 1500,
-      hideProgressBar: true,
-    });
-  }
+  // function addToCart(item) {
+  //   console.log("ok");
+  //   dispatch(ADD_TO_CART({ pro: item }));
+  // }
+
   function adcart(item) {
     dispatch(ADD_TO_CART({ pro: item }));
     toast.success("Tovar savatda!", {
