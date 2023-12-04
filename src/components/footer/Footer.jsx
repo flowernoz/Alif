@@ -16,7 +16,7 @@ function Footer() {
   const showP = ["Hammasini ko'rsatish", <IoIosArrowDown />];
   const hideP = ["Yashirish", <IoIosArrowUp />];
   let date = new Date();
-  let year = date.getFullYear;
+  let year = date.getFullYear();
   return (
     <div className="footer">
       <div className="center__footer">
