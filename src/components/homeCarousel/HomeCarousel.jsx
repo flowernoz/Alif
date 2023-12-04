@@ -24,7 +24,7 @@ export default function HomeCarousel() {
           clickable: true,
         }}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
         }}
         navigation={true}
         modules={[Pagination, Navigation, Autoplay]}
@@ -32,7 +32,7 @@ export default function HomeCarousel() {
       >
         {homeCarousel.map((item, index) => (
           <SwiperSlide key={index}>
-            <img src={item.img} alt="slide" className="slides"/>
+            <img src={item.img} alt="slide" className="slides" />
           </SwiperSlide>
         ))}
       </Swiper>

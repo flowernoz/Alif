@@ -15,7 +15,8 @@ function Footer() {
   const [hide, setHide] = useState(true);
   const showP = ["Hammasini ko'rsatish", <IoIosArrowDown />];
   const hideP = ["Yashirish", <IoIosArrowUp />];
-
+  let date = new Date();
+  let year = date.getFullYear;
   return (
     <div className="footer">
       <div className="center__footer">
@@ -115,7 +116,7 @@ function Footer() {
           </div>
           <div className="line__footer"></div>
           <div className="about">
-            <p>2023 © alifshop.uz</p>
+            <p>{year} © alifshop.uz</p>
             <img src={yandexImg} alt="yandex img" />
           </div>
         </div>
