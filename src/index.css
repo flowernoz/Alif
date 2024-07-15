@@ -17,9 +17,9 @@ body {
   /* outline:2px solid black; */
 }
 
-.wrap {
-  max-width: 1366px;
+.main {
   width: 100%;
+  margin: 0 auto;
 }
 
 button,
